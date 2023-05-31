@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{polynom}
+\usepackage{wasysym}
+\usepackage{kbordermatrix}
+\usepackage{blkarray}
+\usepackage{blindtext}
+\usepackage{makecell}
+\usepackage[a4paper,landscape]{geometry}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+
+\author{Marcin Woch}
+\title{Algorithms Cheat Sheet}
+\date{}
+\begin{document}
+\maketitle
+
+\newpage
+\section*{Matrix Algebra}
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{c ccccc}
+		Operation & Name & Input & Output & Bound & Year\\
+		\hline
+		Multiplication & Schoolbook & Two $n \times n$ matrices & One $n\times n$ matrix & $O(n^3)$ &\\
+		Multiplication &Strassen's & Two $n \times n$  matrices & One $n\times n$ matrix &$O(n^{\log_2{7}})$ = $O(n^{2.807})$ & 1969\\
+	    Multiplication &Alman-Williams & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3728596})$ & 2020\\
+		Multiplication &Schoolbook & One $n\times m$ matrix, one $m\times p$ matrix & One $n\times p$ matrix& $O(nmp)$ & \\
+		Inversion &Gauss-Jordan elimination & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^3)$ & \\
+		Inversion &Strassen algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.807})$ & \\
+		Inversion &Coppersmith-Winograd algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.376})$ & \\
+		Inversion &Optimised CW algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.373})$ & \\
+		SVD &Bidiagonalization, QR algorithm & One $m\times n$ matrix ($m\leq n$)& \makecell {One $m\times m$ \\ One $m \times n$ matrix \\ One $n \times n$} & $O(m^2n)$ & \\
+		Determinant &Laplace expansion & One $n\times n$ matrix & One number & $O(n!)$ & \\
+		Determinant & Division free algorithm & One $n\times n$ matrix & One number & $O(n^4)$ & \\
+		Determinant & LU decomposition & One $n\times n$ matrix & One number & $O(n^3)$ & \\
+		Determinant & Bareiss algorithm & One $n\times n$ matrix & One number & $O(n^3)$ & \\
+		Determinant & Fast matrix multiplication & One $n\times n$ matrix & One number & $O(n^{2.373})$ & \\
+		Back substitution & Back substitution algorithm & Triangular matrix & n solutions & $O(n^2)$ & \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\newpage
+\section*{Graphs}
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{c cccccc}
+		Operation & Name & Input & Comment & Bound & Year\\
+		\hline
+		Explicit Graph Search & Depth First Search & V - vertices, E - edges &  & $O(|V| + |E|)$ & 19th century\\
+		Implicit Graph Search & Depth First Search & b - branching factor, d - depth & & $O(b^d)$ & 19th century\\
+		Explicit Graph Search & Breadth First Search & V - vertices, E - edges & & $O(|V| + |E|)$ & 19th century\\
+		Implicit Graph Search & Breadth First Search & b - branching factor, d - depth & & $O(b^d)$ & 19th century\\
+		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Priority queue/heap & $O(|V| + |E|)log|V|$ & 19th century\\
+		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Array & $O(|V|^2$ & 19th century\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\newpage
+\section*{Sorting}
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{cccc}
+		Name & Average & Worst & Stable\\
+		\hline
+		Quicksort & $n\log{n}$ & $n^2$ & No\\
+		Merge sort & $n\log{n}$ & $n\log{)}$ & Yes\\
+		In-place merge sort & - & $n\log^2{n}$ & Yes\\
+		Introsort & $n\log{n}$ & $n\log{n}$ & No\\
+		Heapsort & $n\log{n}$ & $n\log{n}$ & No\\
+		Insertion sort & $n^2$ & $n^2$ & Yes\\
+		Block sort & $n\log{n}$ & $n\log{n}$ & Yes\\
+		Timsort & $n\log{n}$ & $n\log{n}$ & Yes\\
+		Selection sort & $n^2$ & $n^2$ & No\\
+		Cubesort & $n\log{)}$ & $n\log{n}$ & Yes\\
+		Shellsort & $n^{\frac{4}{3}}$ & $n^{\frac{3}{2}}$ & No\\
+		Bubble sort & $n^2$ & $n^2$ & Yes\\
+		Exchange sort & $n^2$ & $n^2$ & No\\
+		Tree sort & $n\log{n}$ & $n\log{n}$ & Yes\\
+		Cycle sort & $n^2$ & $n^2$ & No\\
+		Library sort & $n\log{)}$ & $n^2$ & No\\
+		Patience sort & $n\log{n}$ & $n\log{n}$ & No\\
+		Smoothsort & $n\log{n}$ & $n\log{n}$ & No\\
+		Strand sort & $n^2$ & $n^2$ & Yes\\
+		Tournament sort & $n\log{n}$ & $n\log{n}$ & No\\
+		Cocktail shaker sort & $n^2$ & $n^2$ & Yes\\
+		Comb sort & $n^2$ & $n^2$ & No\\
+		Gnome sort & $n^2$ & $n^2$ & Yes\\
+		Odd-even sort & $n^2$ & $n^2$ & Yes\\
+		\hline
+	\end{tabular}
+\end{table}
+
+% https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations
+
+\end{document}
