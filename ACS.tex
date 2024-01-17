@@ -8,7 +8,7 @@
 \usepackage{blkarray}
 \usepackage{blindtext}
 \usepackage{makecell}
-\usepackage[a4paper,landscape]{geometry}
+\usepackage[a5paper, landscape, margin=0.3in, bottom=0.5in]{geometry}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -23,28 +23,64 @@
 \maketitle
 
 \newpage
-\section*{Matrix Algebra}
+\section*{Mathematical Operations}
+\subsection*{Arithmetics}
 
 \begin{table}[ht]
 	\centering
-	\begin{tabular}{c ccccc}
-		Operation & Name & Input & Output & Bound & Year\\
+	\scriptsize
+	\begin{tabular}{c cccc}
+		Operation & Name & Input & Output & Complexity \\
 		\hline
-		Multiplication & Schoolbook & Two $n \times n$ matrices & One $n\times n$ matrix & $O(n^3)$ &\\
-		Multiplication &Strassen's & Two $n \times n$  matrices & One $n\times n$ matrix &$O(n^{\log_2{7}})$ = $O(n^{2.807})$ & 1969\\
-	    Multiplication &Alman-Williams & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3728596})$ & 2020\\
-		Multiplication &Schoolbook & One $n\times m$ matrix, one $m\times p$ matrix & One $n\times p$ matrix& $O(nmp)$ & \\
-		Inversion &Gauss-Jordan elimination & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^3)$ & \\
-		Inversion &Strassen algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.807})$ & \\
-		Inversion &Coppersmith-Winograd algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.376})$ & \\
-		Inversion &Optimised CW algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.373})$ & \\
-		SVD &Bidiagonalization, QR algorithm & One $m\times n$ matrix ($m\leq n$)& \makecell {One $m\times m$ \\ One $m \times n$ matrix \\ One $n \times n$} & $O(m^2n)$ & \\
-		Determinant &Laplace expansion & One $n\times n$ matrix & One number & $O(n!)$ & \\
-		Determinant & Division free algorithm & One $n\times n$ matrix & One number & $O(n^4)$ & \\
-		Determinant & LU decomposition & One $n\times n$ matrix & One number & $O(n^3)$ & \\
-		Determinant & Bareiss algorithm & One $n\times n$ matrix & One number & $O(n^3)$ & \\
-		Determinant & Fast matrix multiplication & One $n\times n$ matrix & One number & $O(n^{2.373})$ & \\
-		Back substitution & Back substitution algorithm & Triangular matrix & n solutions & $O(n^2)$ & \\
+		Addition & Schoolbook & Two $n$-digit numbers matrices & One $n+1$-digit number& $O(n)$ \\
+		Subtraction & Schoolbook & Two $n$-digit numbers matrices & One $n+1$-digit number& $O(n)$ \\
+		Multiplication & Schoolbook & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n^2)$ \\
+		Multiplication & 3-way Toom-Cook algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n^{\log_3{5}}) \approx O(n^{1.465})$ \\
+		Multiplication & k-way Toom-Cook algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O\bigg(n^{\frac{\log{(2k-1)}}{\log{k}}}\bigg)$ \\
+		Multiplication & Mixed-level Toom-Cook algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n2^{\sqrt{2\log{n}}}\log{n})$\\ 
+		Multiplication & Karatsuba algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n^{\log_2{3}}) \approx O(n^{1.585})$ \\
+		Multiplication & Schönhage–Strassen algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n\log{n}\log{\log{n}})$ \\
+		Multiplication & Harvey-Hoeven algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n\log{n})$ \\
+		Multiplication & Pointer machine \footnotemark[1]& Two $n$-digit numbers matrices & One $2n$-digit number& $O(n)$ \\
+		Multiplication & Unit Cost RAM machine \footnotemark[1] & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n)$ \\
+		Division & Schoolbook & Two $n$-digit numbers matrices & One $n$-digit number& $O(n^2)$ \\
+		Division & Burnikel–Ziegler Divide-and-Conquer Division\footnotemark[2] & Two $n$-digit numbers matrices & One $n$-digit number& $O(M(n)\log{n})$ \\
+		Division & Newton–Raphson division\footnotemark[2] & Two $n$-digit numbers matrices & One $n$-digit number& $O(M(n))$ \\
+		Square root & Newton's method\footnotemark[2]  & One $n$-digit number & One $n$-digit number& $O(M(n))$ \\
+		Modular exponentation & Repeated multiplication and reduction\footnotemark[2]  & Two $n$-digit integers, $k$-bit exponent  & One $n$-digit integer& $O(M(n)2^k)$ \\
+		Modular exponentation & Exponentiation by squaring\footnotemark[2]  & Two $n$-digit integers, $k$-bit exponent  & One $n$-digit integer& $O(M(n)k)$ \\
+		Modular exponentation & Exponentiation with Montgomery reduction\footnotemark[2]  & Two $n$-digit integers, $k$-bit exponent  & One $n$-digit integer& $O(M(n)k)$ \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\footnotetext[1]{\:Theoretical model only} 
+\footnotetext[2]{\:The complexity of an implemented multiplication algorithm} 
+
+\newpage
+\subsection*{Matrix Algebra}
+
+\begin{table}[ht]
+	\centering
+	\scriptsize
+	\begin{tabular}{c cccc}
+		Operation & Name & Input & Output & Complexity \\
+		\hline
+		Multiplication & Schoolbook & Two $n \times n$ matrices & One $n\times n$ matrix & $O(n^3)$ \\
+		Multiplication &Strassen's & Two $n \times n$  matrices & One $n\times n$ matrix &$O(n^{\log_2{7}})$ = $O(n^{2.807})$\\
+	    Multiplication &Alman-Williams & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3728596})$ \\
+		Multiplication &Schoolbook & One $n\times m$ matrix, one $m\times p$ matrix & One $n\times p$ matrix& $O(nmp)$  \\
+		Inversion &Gauss-Jordan elimination & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^3)$  \\
+		Inversion &Strassen algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.807})$  \\
+		Inversion &Coppersmith-Winograd algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.376})$ \\
+		Inversion &Optimised CW algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.373})$  \\
+		SVD &Bidiagonalization, QR algorithm & One $m\times n$ matrix ($m\leq n$)& \makecell {One $m\times m$ \\ One $m \times n$ matrix \\ One $n \times n$} & $O(m^2n)$  \\
+		Determinant &Laplace expansion & One $n\times n$ matrix & One number & $O(n!)$ \\
+		Determinant & Division free algorithm & One $n\times n$ matrix & One number & $O(n^4)$ \\
+		Determinant & LU decomposition & One $n\times n$ matrix & One number & $O(n^3)$ \\
+		Determinant & Bareiss algorithm & One $n\times n$ matrix & One number & $O(n^3)$ \\
+		Determinant & Fast matrix multiplication & One $n\times n$ matrix & One number & $O(n^{2.373})$ \\
+		Back substitution & Back substitution algorithm & Triangular matrix & n solutions & $O(n^2)$ \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -54,15 +90,16 @@
 
 \begin{table}[ht]
 	\centering
-	\begin{tabular}{c cccccc}
-		Operation & Name & Input & Comment & Bound & Year\\
+	\scriptsize
+	\begin{tabular}{c ccccc}
+		Operation & Name & Input & Comment & Bound\\
 		\hline
-		Explicit Graph Search & Depth First Search & V - vertices, E - edges &  & $O(|V| + |E|)$ & 19th century\\
-		Implicit Graph Search & Depth First Search & b - branching factor, d - depth & & $O(b^d)$ & 19th century\\
-		Explicit Graph Search & Breadth First Search & V - vertices, E - edges & & $O(|V| + |E|)$ & 19th century\\
-		Implicit Graph Search & Breadth First Search & b - branching factor, d - depth & & $O(b^d)$ & 19th century\\
-		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Priority queue/heap & $O(|V| + |E|)log|V|$ & 19th century\\
-		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Array & $O(|V|^2$ & 19th century\\
+		Explicit Graph Search & Depth First Search & V - vertices, E - edges &  & $O(|V| + |E|)$ \\
+		Implicit Graph Search & Depth First Search & b - branching factor, d - depth & & $O(b^d)$ \\
+		Explicit Graph Search & Breadth First Search & V - vertices, E - edges & & $O(|V| + |E|)$ \\
+		Implicit Graph Search & Breadth First Search & b - branching factor, d - depth & & $O(b^d)$ \\
+		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Priority queue/heap & $O(|V| + |E|)log|V|$ \\
+		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Array & $O(|V|^2)$ \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -72,6 +109,7 @@
 
 \begin{table}[ht]
 	\centering
+	\scriptsize
 	\begin{tabular}{cccc}
 		Name & Average & Worst & Stable\\
 		\hline
