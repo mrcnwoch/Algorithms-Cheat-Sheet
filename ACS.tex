@@ -8,7 +8,7 @@
 \usepackage{blkarray}
 \usepackage{blindtext}
 \usepackage{makecell}
-\usepackage[a5paper, landscape, margin=0.3in, bottom=0.5in]{geometry}
+\usepackage[a5paper, landscape, margin=0.1in, bottom=0.5in]{geometry}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -30,7 +30,7 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{c cccc}
-		Operation & Name & Input & Output & Complexity \\
+		Operation & Algorithm & Input & Output & Complexity \\
 		\hline
 		Addition & Schoolbook & Two $n$-digit numbers matrices & One $n+1$-digit number& $O(n)$ \\
 		Subtraction & Schoolbook & Two $n$-digit numbers matrices & One $n+1$-digit number& $O(n)$ \\
@@ -44,7 +44,7 @@
 		Multiplication & Pointer machine \footnotemark[1]& Two $n$-digit numbers matrices & One $2n$-digit number& $O(n)$ \\
 		Multiplication & Unit Cost RAM machine \footnotemark[1] & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n)$ \\
 		Division & Schoolbook & Two $n$-digit numbers matrices & One $n$-digit number& $O(n^2)$ \\
-		Division & Burnikel–Ziegler Divide-and-Conquer Division\footnotemark[2] & Two $n$-digit numbers matrices & One $n$-digit number& $O(M(n)\log{n})$ \\
+		Division & Burnikel–Ziegler Divide-and-Conquer\footnotemark[2] & Two $n$-digit numbers matrices & One $n$-digit number& $O(M(n)\log{n})$ \\
 		Division & Newton–Raphson division\footnotemark[2] & Two $n$-digit numbers matrices & One $n$-digit number& $O(M(n))$ \\
 		Square root & Newton's method\footnotemark[2]  & One $n$-digit number & One $n$-digit number& $O(M(n))$ \\
 		Modular exponentation & Repeated multiplication and reduction\footnotemark[2]  & Two $n$-digit integers, $k$-bit exponent  & One $n$-digit integer& $O(M(n)2^k)$ \\
@@ -55,7 +55,7 @@
 \end{table}
 
 \footnotetext[1]{\:Theoretical model only} 
-\footnotetext[2]{\:The complexity of an implemented multiplication algorithm} 
+\footnotetext[2]{\:$M(n)$ - The complexity of an implemented multiplication algorithm} 
 
 \newpage
 \subsection*{Matrix Algebra}
@@ -64,11 +64,14 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{c cccc}
-		Operation & Name & Input & Output & Complexity \\
+		Operation & Algorithm & Input & Output & Complexity \\
 		\hline
 		Multiplication & Schoolbook & Two $n \times n$ matrices & One $n\times n$ matrix & $O(n^3)$ \\
 		Multiplication &Strassen's & Two $n \times n$  matrices & One $n\times n$ matrix &$O(n^{\log_2{7}})$ = $O(n^{2.807})$\\
+		Multiplication &Coppersmith-Winograd & Two $n \times n$  matrices & One $n\times n$ matrix &$O(n^{2.376})$\\
 	    Multiplication &Alman-Williams & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3728596})$ \\
+	    Multiplication &Duan, Wu, Zhou & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3719})$ \\
+	    Multiplication &Williams, Xu, Xu, Zhou & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3716})$ \\
 		Multiplication &Schoolbook & One $n\times m$ matrix, one $m\times p$ matrix & One $n\times p$ matrix& $O(nmp)$  \\
 		Inversion &Gauss-Jordan elimination & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^3)$  \\
 		Inversion &Strassen algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.807})$  \\
@@ -86,26 +89,98 @@
 \end{table}
 
 \newpage
-\section*{Graphs}
+\subsection*{Polynomials}
 
 \begin{table}[ht]
 	\centering
 	\scriptsize
-	\begin{tabular}{c ccccc}
-		Operation & Name & Input & Comment & Bound\\
+	\begin{tabular}{c cccc}
+		Operation & Algorithm & Input & Output & Complexity \\
 		\hline
-		Explicit Graph Search & Depth First Search & V - vertices, E - edges &  & $O(|V| + |E|)$ \\
-		Implicit Graph Search & Depth First Search & b - branching factor, d - depth & & $O(b^d)$ \\
-		Explicit Graph Search & Breadth First Search & V - vertices, E - edges & & $O(|V| + |E|)$ \\
-		Implicit Graph Search & Breadth First Search & b - branching factor, d - depth & & $O(b^d)$ \\
-		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Priority queue/heap & $O(|V| + |E|)log|V|$ \\
-		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Array & $O(|V|^2)$ \\
+		Polynomial evaluation & Direct & One polynomial of degree $n$ and integer coefficients  & One number & $O(n)$ \\
+		Polynomial evaluation & Horner's algorithm & One polynomial of degree $n$ and integer coefficients  & One number & $O(n)$ \\
+		Polynomial gcd & Euclid's algorithm & Two polynomials of degree $n$ and integer coefficients  & One number & $O(n^2)$ \\
+		Polynomial gcd & Lehmer's algorithm (Fast Euclidean) \footnotemark[3]& Two polynomials of degree $n$ and integer coefficients  & One number & $O(M(n) \log{n})$ \\
 		\hline
 	\end{tabular}
 \end{table}
 
+\footnotetext[3]{\:$M(n)$ - The complexity of an implemented multiplication algorithm} 
+
 \newpage
-\section*{Sorting}
+\section*{Number theory}
+
+\begin{table}[ht]
+	\centering
+	\scriptsize
+	\begin{tabular}{c cccc}
+		Operation & Algorithm & Input & Output & Complexity \\
+		\hline
+		Greatest common divisor & Euclidean algorithm & Two n-digit integers & One integer & $O(n^2)$ \\
+		Greatest common divisor & Binary GCD & Two n-digit integers & One integer & $O(n^2)$ \\
+		Greatest common divisor & Left/right k-ary binary GCD & Two n-digit integers & One integer & $O(\frac{n^2}{\log{n}})$ \\
+		Greatest common divisor & Stehle-Zimmermann algorithm\footnotemark[4] & Two n-digit integers & One integer & $O(M(n)\log{n})$ \\
+		Greatest common divisor & Schönhage algorithm\footnotemark[4] & Two n-digit integers & One integer & $O(M(n)\log{n})$ \\
+		Jacobi symbol & Stehle-Zimmermann algorithm\footnotemark[4] & Two n-digit integers & 0, -1 or 1 & $O(M(n)\log{n})$ \\
+		Jacobi symbol & Schönhage algorithm\footnotemark[4] & Two n-digit integers & 0, -1 or 1 & $O(M(n)\log{n})$ \\
+		Factorial & Bottom-up multiplication\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n^2)\log{n})$ \\
+		Factorial & Binary splitting\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n\log{n})\log{n})$ \\
+		Factorial & Exponentiation of the prime factors of $n$\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n\log{n})\log{\log{n}})$ \\
+		Factorial & Exponentiation of the prime factors of $n$\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n\log{n}))$ \\
+		Primality test & AKS primality test $n$ & $n$ digit integer & True or false & $O(n^{6+O(1)})$ \\
+		Primality test & AKS primality test with Agrawal's conjecture$n$ & $n$ digit integer & True or false & $O(n^{3})$ \\
+		Primality test & Elliptic curve test\footnotemark[5] - heuristical approach & $n$ digit integer & True or false & $O(n^{4+\epsilon})$ \\
+		Primality test & Baillie-PSW test\footnotemark[5] & $n$ digit integer & True or false & $O(n^{2+\epsilon})$ \\
+		Primality test & Miller-Rabin test\footnotemark[5] \footnotemark[6] & $n$ digit integer & True or false & $O(kn^{2+\epsilon})$ \\
+		Primality test & Solovay-Strassen test\footnotemark[5] \footnotemark[6] & $n$ digit integer & True or false & $O(kn^{2+\epsilon})$ \\
+		Integer factorisation & General number field sieve\footnotemark[5] & $b$-bit input integer & A set of factors & $O((1+\epsilon)^b)$ \\
+		Integer factorisation & Shor's algorithm \footnotemark[4] \footnotemark[7] & $b$-bit input integer & A set of factors & $O(M(b)b)$ \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\footnotetext[4]{\: $M(n)$ - The complexity of an implemented multiplication algorithm} 
+\footnotetext[5]{\: $\epsilon$ - a positive constant} 
+\footnotetext[6]{\: $k$ - a positive constant} 
+\footnotetext[7]{\: Theoretical model, on quantum computer} 
+
+\newpage
+\section*{Additional Operation}
+
+Special Functions - Elementary functions
+
+\begin{table}[ht]
+	\centering
+	\scriptsize
+	\begin{tabular}{c cccc}
+		Operation & Algorithm & Input & Output & Complexity \\
+		\hline
+		Discrete Fourier transform & Schoolbook & Size $n$ data sequence & Set of complex number & $O(n^2)$ \\
+		Discrete Fourier transform & Fast Fourier transform & Size $n$ data sequence & Set of complex number & $O(n \log{n})$ \\
+		Golden ration & Newton's method\footnotemark[8] &  &  & $O(M(n))$ \\
+		Square root of 2& Newton's method\footnotemark[8] &  &  & $O(M(n))$ \\
+		Euler's number& Taylor series binary splitting of the exp. function\footnotemark[8] &  &  & $O(M(n)\log{n})$ \\
+		Euler's number& Newton inversion of the natural logarithm\footnotemark[8] &  &  & $O(M(n)\log{n})$ \\
+		Pi& Arctan series binary splitting in Machin's formula\footnotemark[8] &  &  & $O(M(n)\log^2{n})$ \\
+		Pi& Gauss-Legendre algorithm\footnotemark[8] &  &  & $O(M(n)\log{n})$ \\
+		Euler's constant& Sweeney's method\footnotemark[8] &  &  & $O(M(n)\log^2{n})$ \\
+		Gamma function& Approx. of the incomplete gamma function\footnotemark[8] & $n$ digit number &  & $O(M(n)n^{\frac{1}{2}}\log^2{n})$ \\
+		Gamma function& Hypergeometric series \footnotemark[8] & Fixed ration number &  & $O(M(n)\log^2{n})$ \\
+		Hypergeometric function& Borwein and Borwein \footnotemark[8] & $n$-digit number &  & $O(M(n)n^{\frac{1}{2}}\log^2{n})$ \\
+		Hypergeometric function& Hypergeometric series \footnotemark[8] & Fixed rational number &  & $O(M(n)\log^2{n})$ \\
+		Taylor series& Repeated argument reduction\footnotemark[8] \footnotemark[9]&  &  & $O(M(n)n^{\frac{1}{2}})$ \\
+		Taylor series& FFT-based acceleration \footnotemark[8] \footnotemark[9]&  &  & $O(M(n)n^{\frac{1}{3}}\log^2{n})$ \\
+		Taylor series& Binary splitting + bit-burst\footnotemark[8] \footnotemark[9]&  &  & $O(M(n)\log^2{n})$ \\
+		Arithmetic-geometric mean iteration& Arithmetic-geometric mean iteration\footnotemark[8] \footnotemark[9]&  &  & $O(M(n)\log{n})$ \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\footnotetext[8]{\:$M(n)$ - The complexity of an implemented multiplication algorithm} 
+\footnotetext[9]{\:Aplicability: exp. log, sin, cos, arctan} 
+
+\newpage
+\section*{Sorting Algorithms}
 
 \begin{table}[ht]
 	\centering
@@ -114,7 +189,7 @@
 		Name & Average & Worst & Stable\\
 		\hline
 		Quicksort & $n\log{n}$ & $n^2$ & No\\
-		Merge sort & $n\log{n}$ & $n\log{)}$ & Yes\\
+		Merge sort & $n\log{n}$ & $n\log{n}$ & Yes\\
 		In-place merge sort & - & $n\log^2{n}$ & Yes\\
 		Introsort & $n\log{n}$ & $n\log{n}$ & No\\
 		Heapsort & $n\log{n}$ & $n\log{n}$ & No\\
@@ -141,6 +216,27 @@
 	\end{tabular}
 \end{table}
 
+\newpage
+\section*{Graphs}
+
+\begin{table}[ht]
+	\centering
+	\scriptsize
+	\begin{tabular}{c ccccc}
+		Operation & Algorithm & Input & Comment & Complexity \\
+		\hline
+		Explicit Graph Search & Depth First Search & V - vertices, E - edges &  & $O(|V| + |E|)$ \\
+		Implicit Graph Search & Depth First Search & b - branching factor, d - depth & & $O(b^d)$ \\
+		Explicit Graph Search & Breadth First Search & V - vertices, E - edges & & $O(|V| + |E|)$ \\
+		Implicit Graph Search & Breadth First Search & b - branching factor, d - depth & & $O(b^d)$ \\
+		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Priority queue/heap & $O(|V| + |E|)log|V|$ \\
+		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Array & $O(|V|^2)$ \\
+		\hline
+	\end{tabular}
+\end{table}
+
+% https://en.wikipedia.org/wiki/Sorting_algorithm
 % https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations
+% https://en.wikipedia.org/wiki/Time_complexity
 
 \end{document}
