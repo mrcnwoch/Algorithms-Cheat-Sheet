@@ -23,6 +23,14 @@
 \maketitle
 
 \newpage
+\tableofcontents
+
+\newpage
+\section*{Introduction}
+
+\addcontentsline{toc}{section}{Introduction}
+
+\newpage
 \section*{Mathematical Operations}
 \subsection*{Arithmetics}
 
@@ -54,6 +62,8 @@
 	\end{tabular}
 \end{table}
 
+\addcontentsline{toc}{section}{Mathematical Operations}
+\addcontentsline{toc}{subsection}{Arithmetics}
 \footnotetext[1]{\:Theoretical model only} 
 \footnotetext[2]{\:$M(n)$ - The complexity of an implemented multiplication algorithm} 
 
@@ -88,6 +98,8 @@
 	\end{tabular}
 \end{table}
 
+\addcontentsline{toc}{subsection}{Matrix Algebra}
+
 \newpage
 \subsection*{Polynomials}
 
@@ -105,10 +117,11 @@
 	\end{tabular}
 \end{table}
 
+\addcontentsline{toc}{subsection}{Polynomials}
 \footnotetext[3]{\:$M(n)$ - The complexity of an implemented multiplication algorithm} 
 
 \newpage
-\section*{Number theory}
+\subsection*{Number theory}
 
 \begin{table}[ht]
 	\centering
@@ -139,13 +152,14 @@
 	\end{tabular}
 \end{table}
 
+\addcontentsline{toc}{subsection}{Number theory}
 \footnotetext[4]{\: $M(n)$ - The complexity of an implemented multiplication algorithm} 
 \footnotetext[5]{\: $\epsilon$ - a positive constant} 
 \footnotetext[6]{\: $k$ - a positive constant} 
 \footnotetext[7]{\: Theoretical model, on quantum computer} 
 
 \newpage
-\section*{Additional Operation}
+\subsection*{Additional Operations}
 
 Special Functions - Elementary functions
 
@@ -176,8 +190,14 @@ Special Functions - Elementary functions
 	\end{tabular}
 \end{table}
 
+\addcontentsline{toc}{subsection}{Additional Operations}
 \footnotetext[8]{\:$M(n)$ - The complexity of an implemented multiplication algorithm} 
 \footnotetext[9]{\:Aplicability: exp. log, sin, cos, arctan} 
+
+\newpage
+\section*{Data Structures - Common Operations}
+
+\addcontentsline{toc}{section}{Data Structures - Common Operations}
 
 \newpage
 \section*{Sorting Algorithms}
@@ -216,8 +236,16 @@ Special Functions - Elementary functions
 	\end{tabular}
 \end{table}
 
+\addcontentsline{toc}{section}{Sorting Algorithms}
+
 \newpage
 \section*{Graphs}
+\subsection*{Data Structure Operations}
+\addcontentsline{toc}{section}{Graphs}
+\addcontentsline{toc}{subsection}{Data Structure Operationss}
+
+\newpage
+\subsection*{Graph Search Algorithms}
 
 \begin{table}[ht]
 	\centering
@@ -235,6 +263,20 @@ Special Functions - Elementary functions
 	\end{tabular}
 \end{table}
 
+\addcontentsline{toc}{subsection}{Graph Search Algorithms}
+
+\newpage
+\subsection*{Other Graph Algorithms}
+
+
+\addcontentsline{toc}{subsection}{Other Graph Algorithms}
+
+\newpage
+\subsection*{Operations on Strings}
+
+\addcontentsline{toc}{section}{Operations on Strings}
+
+% https://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths
 % https://en.wikipedia.org/wiki/Sorting_algorithm
 % https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations
 % https://en.wikipedia.org/wiki/Time_complexity
