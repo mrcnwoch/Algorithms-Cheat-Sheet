@@ -6,3 +6,5 @@ tablists*
 ACS.aux
 .gitignore
 .gitattributes
+Literature/*
+Literature
