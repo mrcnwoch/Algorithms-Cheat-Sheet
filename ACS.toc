@@ -5,12 +5,14 @@
 \contentsline {subsection}{Polynomials}{6}{}%
 \contentsline {subsection}{Number theory}{7}{}%
 \contentsline {subsection}{Additional Operations}{8}{}%
-\contentsline {section}{Data Structures - Common Operations}{9}{}%
-\contentsline {section}{Heap - Common Operations}{10}{}%
-\contentsline {section}{Sorting Algorithms}{11}{}%
-\contentsline {section}{Searching}{12}{}%
-\contentsline {section}{Graphs}{13}{}%
-\contentsline {subsection}{Data Structure Operationss}{13}{}%
-\contentsline {subsection}{Graph Search Algorithms}{14}{}%
-\contentsline {subsection}{Other Graph Algorithms}{15}{}%
-\contentsline {section}{Operations on Strings}{16}{}%
+\contentsline {section}{Common Operations on Basic Data Structures}{9}{}%
+\contentsline {section}{Common Operations on Trees Data Structures}{10}{}%
+\contentsline {section}{Heap - Common Operations}{11}{}%
+\contentsline {section}{Sorting Algorithms}{12}{}%
+\contentsline {section}{Searching}{13}{}%
+\contentsline {section}{Graphs}{14}{}%
+\contentsline {subsection}{Data Structure Operationss}{14}{}%
+\contentsline {subsection}{Graph Search Algorithms}{15}{}%
+\contentsline {subsection}{Other Graph Algorithms}{16}{}%
+\contentsline {section}{Operations on Strings}{17}{}%
+\contentsline {section}{Bibliography}{18}{}%

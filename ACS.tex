@@ -161,8 +161,6 @@
 \newpage
 \subsection*{Additional Operations}
 
-Special Functions - Elementary functions
-
 \begin{table}[ht]
 	\centering
 	\scriptsize
@@ -190,12 +188,13 @@ Special Functions - Elementary functions
 	\end{tabular}
 \end{table}
 
-\addcontentsline{toc}{subsection}{Additional Operations}
 \footnotetext[8]{\:$M(n)$ - The complexity of an implemented multiplication algorithm} 
 \footnotetext[9]{\:Aplicability: exp. log, sin, cos, arctan} 
+\addcontentsline{toc}{subsection}{Additional Operations}
 
 \newpage
-\section*{Data Structures - Common Operations}
+\section*{Common Operations on Basic Data Structures}
+\addcontentsline{toc}{section}{Common Operations on Basic Data Structures}
 
 \begin{table}[ht]
 	\centering
@@ -207,46 +206,72 @@ Special Functions - Elementary functions
 		Array & Deletion & $O(n)$ & $O(n)$  \\
 		Array & Insertion & $O(n)$ & $O(n)$  \\
 		Array & Search & $O(n)$ & $O(n)$ \\
-		
-		Binary Search Tree & Access & $O(\log{n})$ & $O(n)$ \\
-		Binary Search Tree & Deletion & $O(\log{n})$ & $O(n)$ \\
-		Binary Search Tree & Insertion & $O(\log{n})$ & $O(n)$ \\
-		Binary Search Tree & Search & $O(\log{n})$ & $O(n)$ \\
-		
 		Doubly-Linked List & Access & $O(n)$ & $O(n)$  \\
 		Doubly-Linked List & Deletion & $O(1)$ & $O(1)$  \\
 		Doubly-Linked List & Insertion & $O(1)$ & $O(1)$  \\
 		Doubly-Linked List & Search & $O(n)$ & $O(n)$ \\
-		
 		Hash Table & Deletion & $O(1)$ & $O(n)$ \\
 		Hash Table & Insertion & $O(1)$ & $O(n)$ \\
 		Hash Table & Search & $O(1)$ & $O(n)$ \\
-		
 		Queue & Access & $O(n)$ & $O(n)$  \\
 		Queue & Deletion & $O(1)$ & $O(1)$  \\
 		Queue & Insertion & $O(1)$ & $O(1)$  \\
 		Queue& Search & $O(n)$ & $O(n)$  \\
-		
 		Singly-Linked List & Access & $O(n)$ & $O(n)$  \\
 		Singly-Linked List & Deletion & $O(1)$ & $O(1)$ \\
 		Singly-Linked List & Insertion & $O(1)$ & $O(1)$ \\
 		Singly-Linked List & Search & $O(n)$ & $O(n)$ \\
-		
 		Skip List & Access & $O(\log{n})$ & $O(n)$ \\
 		Skip List & Deletion & $O(\log{n})$ & $O(n)$ \\
 		Skip List & Insertion & $O(\log{n})$ & $O(n)$ \\
 		Skip List & Search & $O(\log{n})$ & $O(n)$ \\
-		
 		Stack & Access & $O(n)$ & $O(n)$ \\
 		Stack & Deletion & $O(1)$ & $O(1)$ \\
 		Stack & Insertion & $O(1)$ & $O(1)$ \\
 		Stack & Search & $O(n)$ & $O(n)$ \\
-		
 		\hline
 	\end{tabular}
 \end{table}
 
-\addcontentsline{toc}{section}{Data Structures - Common Operations}
+\newpage
+\section*{Common Operations on Trees Data Structures}
+\addcontentsline{toc}{section}{Common Operations on Trees Data Structures}
+
+\begin{table}[ht]
+	\centering
+	\scriptsize
+	\begin{tabular}{c ccc}
+		Data Structure & Operation & Average Time Complexity & Worst Time Complexity \\
+		\hline
+		AVL Tree & Access & $O(\log{n})$ & $O(\log{n})$ \\
+		AVL Tree & Deletion & $O(\log{n})$ & $O(\log{n})$ \\
+		AVL Tree & Insertion & $O(\log{n})$ & $O(\log{n})$ \\
+		AVL Tree & Search & $O(\log{n})$ & $O(\log{n})$ \\
+		Binary Search Tree & Access & $O(\log{n})$ & $O(n)$ \\
+		Binary Search Tree & Deletion & $O(\log{n})$ & $O(n)$ \\
+		Binary Search Tree & Insertion & $O(\log{n})$ & $O(n)$ \\
+		Binary Search Tree & Search & $O(\log{n})$ & $O(n)$ \\
+		B-Tree & Access & $O(\log{n})$ & $O(\log{n})$ \\
+		B-Tree & Deletion & $O(\log{n})$ & $O(\log{n})$ \\
+		B-Tree & Insertion & $O(\log{n})$ & $O(\log{n})$ \\
+		B-Tree & Search & $O(\log{n})$ & $O(\log{n})$ \\
+		Cartesian Tree & Deletion & $O(\log{n})$ & $O(n)$ \\
+		Cartesian Tree & Insertion & $O(\log{n})$ & $O(n)$ \\
+		Cartesian Tree & Search & $O(\log{n})$ & $O(n)$ \\
+		KD Tree & Access & $O(\log{n})$ & $O(n)$ \\
+		KD Tree & Deletion & $O(\log{n})$ & $O(n)$ \\
+		KD Tree & Insertion & $O(\log{n})$ & $O(n)$ \\
+		KD Tree & Search & $O(\log{n})$ & $O(n)$ \\
+		Red-Black Tree & Access & $O(\log{n})$ & $O(\log{n})$ \\
+		Red-Black Tree & Deletion & $O(\log{n})$ & $O(\log{n})$ \\
+		Red-Black Tree & Insertion & $O(\log{n})$ & $O(\log{n})$ \\
+		Red-Black Tree & Search & $O(\log{n})$ & $O(\log{n})$ \\
+		Splay Tree & Deletion & $O(\log{n})$ & $O(\log{n})$ \\
+		Splay Tree & Insertion & $O(\log{n})$ & $O(\log{n})$ \\
+		Splay Tree & Search & $O(\log{n})$ & $O(\log{n})$ \\
+		\hline
+	\end{tabular}
+\end{table}
 
 \newpage
 \section*{Heap - Common Operations}
@@ -260,37 +285,45 @@ Special Functions - Elementary functions
 	\centering
 	\scriptsize
 	\begin{tabular}{cccc}
-		Name & Average & Worst & Stable\\
+		Name & Best& Average & Worst\\
 		\hline
-		Quicksort & $n\log{n}$ & $n^2$ & No\\
-		Merge sort & $n\log{n}$ & $n\log{n}$ & Yes\\
-		In-place merge sort & - & $n\log^2{n}$ & Yes\\
-		Introsort & $n\log{n}$ & $n\log{n}$ & No\\
-		Heapsort & $n\log{n}$ & $n\log{n}$ & No\\
-		Insertion sort & $n^2$ & $n^2$ & Yes\\
-		Block sort & $n\log{n}$ & $n\log{n}$ & Yes\\
-		Timsort & $n\log{n}$ & $n\log{n}$ & Yes\\
-		Selection sort & $n^2$ & $n^2$ & No\\
-		Cubesort & $n\log{)}$ & $n\log{n}$ & Yes\\
-		Shellsort & $n^{\frac{4}{3}}$ & $n^{\frac{3}{2}}$ & No\\
-		Bubble sort & $n^2$ & $n^2$ & Yes\\
-		Exchange sort & $n^2$ & $n^2$ & No\\
-		Tree sort & $n\log{n}$ & $n\log{n}$ & Yes\\
-		Cycle sort & $n^2$ & $n^2$ & No\\
-		Library sort & $n\log{)}$ & $n^2$ & No\\
-		Patience sort & $n\log{n}$ & $n\log{n}$ & No\\
-		Smoothsort & $n\log{n}$ & $n\log{n}$ & No\\
-		Strand sort & $n^2$ & $n^2$ & Yes\\
-		Tournament sort & $n\log{n}$ & $n\log{n}$ & No\\
-		Cocktail shaker sort & $n^2$ & $n^2$ & Yes\\
-		Comb sort & $n^2$ & $n^2$ & No\\
-		Gnome sort & $n^2$ & $n^2$ & Yes\\
-		Odd-even sort & $n^2$ & $n^2$ & Yes\\
+		Block sort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
+		Bubble sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
+		Bucket sort\footnotemark[10] & $O(n+k)$ & $O(n+k)$ & $O(n^2)$ \\
+		Cocktail shaker sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
+		Comb sort\footnotemark[11] & $O(n\log{n})$ & $O(n^2/2^p)$ & $O(n^2)$ \\
+		Counting sort\footnotemark[12] & $O(n+k)$ & $O(n+k)$ & $O(n+k)$ \\
+		Cubesort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
+		Cycle sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$ \\
+		Exchange sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$ \\
+		Gnome sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$ \\
+		In-place merge sort & $O(n\log{n})$ & - & $O(n\log^2{n})$ \\
+		Insertion sort &$O(n)$ & $O(n^2)$ & $O(n^2)$ \\
+		Introsort & $O(n\log{n})$ & $O(n\log{n})$ & $O(n\log{n})$ \\
+		Heapsort & $O(n\log{n})$ & $O(n\log{n})$ & $O(n\log{n})$ \\
+		Library sort & $O(n\log{n})$ & $O(n\log{n})$ & $n^2$ \\
+		Merge sort & $O(n\log{n})$ & $O(n\log{n})$ & $O(n\log{n})$ \\
+		Odd-even sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
+		Patience sort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
+		Quicksort & $O(n\log{n})$ & $O(n\log{n})$ & $O(n^2)$ \\
+		Radix sort\footnotemark[13] & $O(nd)$ & $O(nd)$ & $O(nd)$ \\
+		Selection sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$\\
+		Shellsort & $O(n \log{n})$& $O(n \log^2{n})$ & $O(n \log^2{n})$ \\
+		Smoothsort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
+		Strand sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
+		Timsort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
+		Tournament sort &$O(n\log{n})$ & $O(n\log{n})$ & $O(n\log{n})$ \\
+		Tree (balanced) sort &$O(n\log{n})$ & $O(n\log{n})$ & $O(n\log{n})$ \\
+		Tree (unbalanced) sort &$O(n\log{n})$ & $O(n\log{n})$ & $O(n^2)$ \\
 		\hline
 	\end{tabular}
 \end{table}
 
 \addcontentsline{toc}{section}{Sorting Algorithms}
+\footnotetext[10]{\:k - number of buckets} 
+\footnotetext[11]{\:p - number of increments} 
+\footnotetext[12]{\:k - range of input} 
+\footnotetext[13]{\:d - max key lenght} 
 
 \newpage
 \section*{Searching}
@@ -338,5 +371,19 @@ Special Functions - Elementary functions
 % https://en.wikipedia.org/wiki/Sorting_algorithm
 % https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations
 % https://en.wikipedia.org/wiki/Time_complexity
+
+\newpage
+\subsection*{Bibliography}
+
+\begin{thebibliography}{20}
+	\bibitem{texbook}
+	Cormen T. H., Leiserson C. E. - Introduction to Algorithms, fourth edition, MIT Press, 2022.
+	\bibitem{texbook}
+	Sedgewick R. - Algorithms, Addison Wesley Publishing Company, 1988.
+	\bibitem{texbook}
+	Sedgewick R., Wayne K. - Algorithms, Princeton University, 2011.
+\end{thebibliography}
+
+\addcontentsline{toc}{section}{Bibliography}
 
 \end{document}
