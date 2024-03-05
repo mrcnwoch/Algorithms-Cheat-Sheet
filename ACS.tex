@@ -38,26 +38,31 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{c cccc}
-		Operation & Algorithm & Input & Output & Complexity \\
+		\textbf{Operation} & \textbf{Algorithm} & \textbf{Input} & \textbf{Output} & \textbf{Complexity} \\
 		\hline
 		Addition & Schoolbook & Two $n$-digit numbers matrices & One $n+1$-digit number& $O(n)$ \\
+		\hline
 		Subtraction & Schoolbook & Two $n$-digit numbers matrices & One $n+1$-digit number& $O(n)$ \\
+		\hline
 		Multiplication & Schoolbook & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n^2)$ \\
-		Multiplication & 3-way Toom-Cook algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n^{\log_3{5}}) \approx O(n^{1.465})$ \\
-		Multiplication & k-way Toom-Cook algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O\bigg(n^{\frac{\log{(2k-1)}}{\log{k}}}\bigg)$ \\
-		Multiplication & Mixed-level Toom-Cook algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n2^{\sqrt{2\log{n}}}\log{n})$\\ 
-		Multiplication & Karatsuba algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n^{\log_2{3}}) \approx O(n^{1.585})$ \\
-		Multiplication & Schönhage–Strassen algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n\log{n}\log{\log{n}})$ \\
-		Multiplication & Harvey-Hoeven algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n\log{n})$ \\
-		Multiplication & Pointer machine \footnotemark[1]& Two $n$-digit numbers matrices & One $2n$-digit number& $O(n)$ \\
-		Multiplication & Unit Cost RAM machine \footnotemark[1] & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n)$ \\
+		& 3-way Toom-Cook algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n^{\log_3{5}}) \approx O(n^{1.465})$ \\
+		& k-way Toom-Cook algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O\bigg(n^{\frac{\log{(2k-1)}}{\log{k}}}\bigg)$ \\
+		& Mixed-level Toom-Cook algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n2^{\sqrt{2\log{n}}}\log{n})$\\ 
+		& Karatsuba algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n^{\log_2{3}}) \approx O(n^{1.585})$ \\
+		& Schönhage–Strassen algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n\log{n}\log{\log{n}})$ \\
+		& Harvey-Hoeven algorithm & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n\log{n})$ \\
+		& Pointer machine \footnotemark[1]& Two $n$-digit numbers matrices & One $2n$-digit number& $O(n)$ \\
+		& Unit Cost RAM machine \footnotemark[1] & Two $n$-digit numbers matrices & One $2n$-digit number& $O(n)$ \\
+		\hline
 		Division & Schoolbook & Two $n$-digit numbers matrices & One $n$-digit number& $O(n^2)$ \\
-		Division & Burnikel–Ziegler Divide-and-Conquer\footnotemark[2] & Two $n$-digit numbers matrices & One $n$-digit number& $O(M(n)\log{n})$ \\
-		Division & Newton–Raphson division\footnotemark[2] & Two $n$-digit numbers matrices & One $n$-digit number& $O(M(n))$ \\
+		& Burnikel–Ziegler Divide-and-Conquer\footnotemark[2] & Two $n$-digit numbers matrices & One $n$-digit number& $O(M(n)\log{n})$ \\
+		 & Newton–Raphson division\footnotemark[2] & Two $n$-digit numbers matrices & One $n$-digit number& $O(M(n))$ \\
+		\hline
 		Square root & Newton's method\footnotemark[2]  & One $n$-digit number & One $n$-digit number& $O(M(n))$ \\
+		\hline
 		Modular exponentation & Repeated multiplication and reduction\footnotemark[2]  & Two $n$-digit integers, $k$-bit exponent  & One $n$-digit integer& $O(M(n)2^k)$ \\
-		Modular exponentation & Exponentiation by squaring\footnotemark[2]  & Two $n$-digit integers, $k$-bit exponent  & One $n$-digit integer& $O(M(n)k)$ \\
-		Modular exponentation & Exponentiation with Montgomery reduction\footnotemark[2]  & Two $n$-digit integers, $k$-bit exponent  & One $n$-digit integer& $O(M(n)k)$ \\
+		& Exponentiation by squaring\footnotemark[2]  & Two $n$-digit integers, $k$-bit exponent  & One $n$-digit integer& $O(M(n)k)$ \\
+		 & Exponentiation with Montgomery reduction\footnotemark[2]  & Two $n$-digit integers, $k$-bit exponent  & One $n$-digit integer& $O(M(n)k)$ \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -74,25 +79,29 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{c cccc}
-		Operation & Algorithm & Input & Output & Complexity \\
+		\textbf{Operation} & \textbf{Algorithm} & \textbf{Input} & \textbf{Output} & \textbf{Complexity} \\
 		\hline
 		Multiplication & Schoolbook & Two $n \times n$ matrices & One $n\times n$ matrix & $O(n^3)$ \\
-		Multiplication &Strassen's & Two $n \times n$  matrices & One $n\times n$ matrix &$O(n^{\log_2{7}})$ = $O(n^{2.807})$\\
-		Multiplication &Coppersmith-Winograd & Two $n \times n$  matrices & One $n\times n$ matrix &$O(n^{2.376})$\\
-	    Multiplication &Alman-Williams & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3728596})$ \\
-	    Multiplication &Duan, Wu, Zhou & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3719})$ \\
-	    Multiplication &Williams, Xu, Xu, Zhou & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3716})$ \\
-		Multiplication &Schoolbook & One $n\times m$ matrix, one $m\times p$ matrix & One $n\times p$ matrix& $O(nmp)$  \\
+		 &Strassen's & Two $n \times n$  matrices & One $n\times n$ matrix &$O(n^{\log_2{7}})$ = $O(n^{2.807})$\\
+		 &Coppersmith-Winograd & Two $n \times n$  matrices & One $n\times n$ matrix &$O(n^{2.376})$\\
+	     &Alman-Williams & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3728596})$ \\
+	     &Duan, Wu, Zhou & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3719})$ \\
+	     &Williams, Xu, Xu, Zhou & Two $n \times n$  matrices & One $n\times n$ matrix& $O(n^{2.3716})$ \\
+		 &Schoolbook & One $n\times m$ matrix, one $m\times p$ matrix & One $n\times p$ matrix& $O(nmp)$  \\
+		\hline
 		Inversion &Gauss-Jordan elimination & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^3)$  \\
-		Inversion &Strassen algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.807})$  \\
-		Inversion &Coppersmith-Winograd algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.376})$ \\
-		Inversion &Optimised CW algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.373})$  \\
+		 &Strassen algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.807})$  \\
+		 &Coppersmith-Winograd algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.376})$ \\
+		 &Optimised CW algorithm & One $n\times n$ matrix & One $n\times n$ matrix& $O(n^{2.373})$  \\
+		 \hline
 		SVD &Bidiagonalization, QR algorithm & One $m\times n$ matrix ($m\leq n$)& \makecell {One $m\times m$ \\ One $m \times n$ matrix \\ One $n \times n$} & $O(m^2n)$  \\
-		Determinant &Laplace expansion & One $n\times n$ matrix & One number & $O(n!)$ \\
-		Determinant & Division free algorithm & One $n\times n$ matrix & One number & $O(n^4)$ \\
-		Determinant & LU decomposition & One $n\times n$ matrix & One number & $O(n^3)$ \\
-		Determinant & Bareiss algorithm & One $n\times n$ matrix & One number & $O(n^3)$ \\
-		Determinant & Fast matrix multiplication & One $n\times n$ matrix & One number & $O(n^{2.373})$ \\
+		 \hline
+		&Laplace expansion & One $n\times n$ matrix & One number & $O(n!)$ \\
+		& Division free algorithm & One $n\times n$ matrix & One number & $O(n^4)$ \\
+		& LU decomposition & One $n\times n$ matrix & One number & $O(n^3)$ \\
+		& Bareiss algorithm & One $n\times n$ matrix & One number & $O(n^3)$ \\
+	    & Fast matrix multiplication & One $n\times n$ matrix & One number & $O(n^{2.373})$ \\
+		\hline
 		Back substitution & Back substitution algorithm & Triangular matrix & n solutions & $O(n^2)$ \\
 		\hline
 	\end{tabular}
@@ -107,12 +116,13 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{c cccc}
-		Operation & Algorithm & Input & Output & Complexity \\
+		\textbf{Operation} & \textbf{Algorithm} & \textbf{Input} & \textbf{Output} & \textbf{Complexity} \\
 		\hline
 		Polynomial evaluation & Direct & One polynomial of degree $n$ and integer coefficients  & One number & $O(n)$ \\
-		Polynomial evaluation & Horner's algorithm & One polynomial of degree $n$ and integer coefficients  & One number & $O(n)$ \\
+		 & Horner's algorithm & One polynomial of degree $n$ and integer coefficients  & One number & $O(n)$ \\
+		\hline
 		Polynomial gcd & Euclid's algorithm & Two polynomials of degree $n$ and integer coefficients  & One number & $O(n^2)$ \\
-		Polynomial gcd & Lehmer's algorithm (Fast Euclidean) \footnotemark[3]& Two polynomials of degree $n$ and integer coefficients  & One number & $O(M(n) \log{n})$ \\
+		 & Lehmer's algorithm (Fast Euclidean) \footnotemark[3]& Two polynomials of degree $n$ and integer coefficients  & One number & $O(M(n) \log{n})$ \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -127,27 +137,31 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{c cccc}
-		Operation & Algorithm & Input & Output & Complexity \\
+		\textbf{Operation} & \textbf{Algorithm} & \textbf{Input} & \textbf{Output} & \textbf{Complexity} \\
 		\hline
 		Greatest common divisor & Euclidean algorithm & Two n-digit integers & One integer & $O(n^2)$ \\
-		Greatest common divisor & Binary GCD & Two n-digit integers & One integer & $O(n^2)$ \\
-		Greatest common divisor & Left/right k-ary binary GCD & Two n-digit integers & One integer & $O(\frac{n^2}{\log{n}})$ \\
-		Greatest common divisor & Stehle-Zimmermann algorithm\footnotemark[4] & Two n-digit integers & One integer & $O(M(n)\log{n})$ \\
-		Greatest common divisor & Schönhage algorithm\footnotemark[4] & Two n-digit integers & One integer & $O(M(n)\log{n})$ \\
+		& Binary GCD & Two n-digit integers & One integer & $O(n^2)$ \\
+		& Left/right k-ary binary GCD & Two n-digit integers & One integer & $O(\frac{n^2}{\log{n}})$ \\
+		& Stehle-Zimmermann algorithm\footnotemark[4] & Two n-digit integers & One integer & $O(M(n)\log{n})$ \\
+		& Schönhage algorithm\footnotemark[4] & Two n-digit integers & One integer & $O(M(n)\log{n})$ \\
+		\hline
 		Jacobi symbol & Stehle-Zimmermann algorithm\footnotemark[4] & Two n-digit integers & 0, -1 or 1 & $O(M(n)\log{n})$ \\
-		Jacobi symbol & Schönhage algorithm\footnotemark[4] & Two n-digit integers & 0, -1 or 1 & $O(M(n)\log{n})$ \\
+		& Schönhage algorithm\footnotemark[4] & Two n-digit integers & 0, -1 or 1 & $O(M(n)\log{n})$ \\
+		\hline
 		Factorial & Bottom-up multiplication\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n^2)\log{n})$ \\
-		Factorial & Binary splitting\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n\log{n})\log{n})$ \\
-		Factorial & Exponentiation of the prime factors of $n$\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n\log{n})\log{\log{n}})$ \\
-		Factorial & Exponentiation of the prime factors of $n$\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n\log{n}))$ \\
+		& Binary splitting\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n\log{n})\log{n})$ \\
+		& Exponentiation of the prime factors of $n$\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n\log{n})\log{\log{n}})$ \\
+		& Exponentiation of the prime factors of $n$\footnotemark[4] & One positive integer less than $n$ & One integer & $O(M(n\log{n}))$ \\
+		\hline
 		Primality test & AKS primality test $n$ & $n$ digit integer & True or false & $O(n^{6+O(1)})$ \\
-		Primality test & AKS primality test with Agrawal's conjecture$n$ & $n$ digit integer & True or false & $O(n^{3})$ \\
-		Primality test & Elliptic curve test\footnotemark[5] - heuristical approach & $n$ digit integer & True or false & $O(n^{4+\epsilon})$ \\
-		Primality test & Baillie-PSW test\footnotemark[5] & $n$ digit integer & True or false & $O(n^{2+\epsilon})$ \\
-		Primality test & Miller-Rabin test\footnotemark[5] \footnotemark[6] & $n$ digit integer & True or false & $O(kn^{2+\epsilon})$ \\
-		Primality test & Solovay-Strassen test\footnotemark[5] \footnotemark[6] & $n$ digit integer & True or false & $O(kn^{2+\epsilon})$ \\
+		& AKS primality test with Agrawal's conjecture$n$ & $n$ digit integer & True or false & $O(n^{3})$ \\
+		& Elliptic curve test\footnotemark[5] - heuristical approach & $n$ digit integer & True or false & $O(n^{4+\epsilon})$ \\
+		& Baillie-PSW test\footnotemark[5] & $n$ digit integer & True or false & $O(n^{2+\epsilon})$ \\
+		& Miller-Rabin test\footnotemark[5] \footnotemark[6] & $n$ digit integer & True or false & $O(kn^{2+\epsilon})$ \\
+		& Solovay-Strassen test\footnotemark[5] \footnotemark[6] & $n$ digit integer & True or false & $O(kn^{2+\epsilon})$ \\
+		\hline
 		Integer factorisation & General number field sieve\footnotemark[5] & $b$-bit input integer & A set of factors & $O((1+\epsilon)^b)$ \\
-		Integer factorisation & Shor's algorithm \footnotemark[4] \footnotemark[7] & $b$-bit input integer & A set of factors & $O(M(b)b)$ \\
+		& Shor's algorithm \footnotemark[4] \footnotemark[7] & $b$-bit input integer & A set of factors & $O(M(b)b)$ \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -165,24 +179,33 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{c cccc}
-		Operation & Algorithm & Input & Output & Complexity \\
+		\textbf{Operation} & \textbf{Algorithm} & \textbf{Input} & \textbf{Output} & \textbf{Complexity} \\
 		\hline
 		Discrete Fourier transform & Schoolbook & Size $n$ data sequence & Set of complex number & $O(n^2)$ \\
-		Discrete Fourier transform & Fast Fourier transform & Size $n$ data sequence & Set of complex number & $O(n \log{n})$ \\
+        & Fast Fourier transform & Size $n$ data sequence & Set of complex number & $O(n \log{n})$ \\
+		\hline
 		Golden ration & Newton's method\footnotemark[8] &  &  & $O(M(n))$ \\
+		\hline
 		Square root of 2& Newton's method\footnotemark[8] &  &  & $O(M(n))$ \\
+		\hline
 		Euler's number& Taylor series binary splitting of the exp. function\footnotemark[8] &  &  & $O(M(n)\log{n})$ \\
-		Euler's number& Newton inversion of the natural logarithm\footnotemark[8] &  &  & $O(M(n)\log{n})$ \\
+		& Newton inversion of the natural logarithm\footnotemark[8] &  &  & $O(M(n)\log{n})$ \\
+		\hline
 		Pi& Arctan series binary splitting in Machin's formula\footnotemark[8] &  &  & $O(M(n)\log^2{n})$ \\
-		Pi& Gauss-Legendre algorithm\footnotemark[8] &  &  & $O(M(n)\log{n})$ \\
+		& Gauss-Legendre algorithm\footnotemark[8] &  &  & $O(M(n)\log{n})$ \\
+		\hline
 		Euler's constant& Sweeney's method\footnotemark[8] &  &  & $O(M(n)\log^2{n})$ \\
+		\hline
 		Gamma function& Approx. of the incomplete gamma function\footnotemark[8] & $n$ digit number &  & $O(M(n)n^{\frac{1}{2}}\log^2{n})$ \\
-		Gamma function& Hypergeometric series \footnotemark[8] & Fixed ration number &  & $O(M(n)\log^2{n})$ \\
+		& Hypergeometric series \footnotemark[8] & Fixed ration number &  & $O(M(n)\log^2{n})$ \\
+		\hline
 		Hypergeometric function& Borwein and Borwein \footnotemark[8] & $n$-digit number &  & $O(M(n)n^{\frac{1}{2}}\log^2{n})$ \\
-		Hypergeometric function& Hypergeometric series \footnotemark[8] & Fixed rational number &  & $O(M(n)\log^2{n})$ \\
+		& Hypergeometric series \footnotemark[8] & Fixed rational number &  & $O(M(n)\log^2{n})$ \\
+		\hline
 		Taylor series& Repeated argument reduction\footnotemark[8] \footnotemark[9]&  &  & $O(M(n)n^{\frac{1}{2}})$ \\
-		Taylor series& FFT-based acceleration \footnotemark[8] \footnotemark[9]&  &  & $O(M(n)n^{\frac{1}{3}}\log^2{n})$ \\
-		Taylor series& Binary splitting + bit-burst\footnotemark[8] \footnotemark[9]&  &  & $O(M(n)\log^2{n})$ \\
+		& FFT-based acceleration \footnotemark[8] \footnotemark[9]&  &  & $O(M(n)n^{\frac{1}{3}}\log^2{n})$ \\
+		& Binary splitting + bit-burst\footnotemark[8] \footnotemark[9]&  &  & $O(M(n)\log^2{n})$ \\
+		\hline
 		Arithmetic-geometric mean iteration& Arithmetic-geometric mean iteration\footnotemark[8] \footnotemark[9]&  &  & $O(M(n)\log{n})$ \\
 		\hline
 	\end{tabular}
@@ -200,35 +223,41 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{c ccc}
-		Data Structure & Operation & Average Time Complexity & Worst Time Complexity \\
+		\textbf{Data Structure} & \textbf{Operation} & \textbf{Average Time Complexity} & \textbf{Worst Time Complexity} \\
 		\hline
 		Array & Access & $O(1)$ & $O(1)$  \\
-		Array & Deletion & $O(n)$ & $O(n)$  \\
-		Array & Insertion & $O(n)$ & $O(n)$  \\
-		Array & Search & $O(n)$ & $O(n)$ \\
+		& Deletion & $O(n)$ & $O(n)$  \\
+		& Insertion & $O(n)$ & $O(n)$  \\
+		& Search & $O(n)$ & $O(n)$ \\
+		\hline
 		Doubly-Linked List & Access & $O(n)$ & $O(n)$  \\
-		Doubly-Linked List & Deletion & $O(1)$ & $O(1)$  \\
-		Doubly-Linked List & Insertion & $O(1)$ & $O(1)$  \\
-		Doubly-Linked List & Search & $O(n)$ & $O(n)$ \\
+		& Deletion & $O(1)$ & $O(1)$  \\
+		& Insertion & $O(1)$ & $O(1)$  \\
+		& Search & $O(n)$ & $O(n)$ \\
+		\hline
 		Hash Table & Deletion & $O(1)$ & $O(n)$ \\
-		Hash Table & Insertion & $O(1)$ & $O(n)$ \\
-		Hash Table & Search & $O(1)$ & $O(n)$ \\
+		& Insertion & $O(1)$ & $O(n)$ \\
+		& Search & $O(1)$ & $O(n)$ \\
+		\hline
 		Queue & Access & $O(n)$ & $O(n)$  \\
-		Queue & Deletion & $O(1)$ & $O(1)$  \\
-		Queue & Insertion & $O(1)$ & $O(1)$  \\
-		Queue& Search & $O(n)$ & $O(n)$  \\
+		& Deletion & $O(1)$ & $O(1)$  \\
+		& Insertion & $O(1)$ & $O(1)$  \\
+		& Search & $O(n)$ & $O(n)$  \\
+		\hline
 		Singly-Linked List & Access & $O(n)$ & $O(n)$  \\
-		Singly-Linked List & Deletion & $O(1)$ & $O(1)$ \\
-		Singly-Linked List & Insertion & $O(1)$ & $O(1)$ \\
-		Singly-Linked List & Search & $O(n)$ & $O(n)$ \\
+		& Deletion & $O(1)$ & $O(1)$ \\
+		& Insertion & $O(1)$ & $O(1)$ \\
+		& Search & $O(n)$ & $O(n)$ \\
+		\hline
 		Skip List & Access & $O(\log{n})$ & $O(n)$ \\
-		Skip List & Deletion & $O(\log{n})$ & $O(n)$ \\
-		Skip List & Insertion & $O(\log{n})$ & $O(n)$ \\
-		Skip List & Search & $O(\log{n})$ & $O(n)$ \\
+		& Deletion & $O(\log{n})$ & $O(n)$ \\
+		& Insertion & $O(\log{n})$ & $O(n)$ \\
+		& Search & $O(\log{n})$ & $O(n)$ \\
+		\hline
 		Stack & Access & $O(n)$ & $O(n)$ \\
-		Stack & Deletion & $O(1)$ & $O(1)$ \\
-		Stack & Insertion & $O(1)$ & $O(1)$ \\
-		Stack & Search & $O(n)$ & $O(n)$ \\
+		& Deletion & $O(1)$ & $O(1)$ \\
+		& Insertion & $O(1)$ & $O(1)$ \\
+		& Search & $O(n)$ & $O(n)$ \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -241,40 +270,83 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{c ccc}
-		Data Structure & Operation & Average Time Complexity & Worst Time Complexity \\
+		\textbf{Data Structure} & \textbf{Operation} & \textbf{Average Time Complexity} & \textbf{Worst Time Complexity} \\
 		\hline
 		AVL Tree & Access & $O(\log{n})$ & $O(\log{n})$ \\
-		AVL Tree & Deletion & $O(\log{n})$ & $O(\log{n})$ \\
-		AVL Tree & Insertion & $O(\log{n})$ & $O(\log{n})$ \\
-		AVL Tree & Search & $O(\log{n})$ & $O(\log{n})$ \\
+		& Deletion & $O(\log{n})$ & $O(\log{n})$ \\
+		& Insertion & $O(\log{n})$ & $O(\log{n})$ \\
+		& Search & $O(\log{n})$ & $O(\log{n})$ \\
+		\hline
 		Binary Search Tree & Access & $O(\log{n})$ & $O(n)$ \\
-		Binary Search Tree & Deletion & $O(\log{n})$ & $O(n)$ \\
-		Binary Search Tree & Insertion & $O(\log{n})$ & $O(n)$ \\
-		Binary Search Tree & Search & $O(\log{n})$ & $O(n)$ \\
+		& Deletion & $O(\log{n})$ & $O(n)$ \\
+		& Insertion & $O(\log{n})$ & $O(n)$ \\
+		& Search & $O(\log{n})$ & $O(n)$ \\
+		\hline
 		B-Tree & Access & $O(\log{n})$ & $O(\log{n})$ \\
-		B-Tree & Deletion & $O(\log{n})$ & $O(\log{n})$ \\
-		B-Tree & Insertion & $O(\log{n})$ & $O(\log{n})$ \\
-		B-Tree & Search & $O(\log{n})$ & $O(\log{n})$ \\
+		& Deletion & $O(\log{n})$ & $O(\log{n})$ \\
+		& Insertion & $O(\log{n})$ & $O(\log{n})$ \\
+		& Search & $O(\log{n})$ & $O(\log{n})$ \\
+		\hline
 		Cartesian Tree & Deletion & $O(\log{n})$ & $O(n)$ \\
-		Cartesian Tree & Insertion & $O(\log{n})$ & $O(n)$ \\
-		Cartesian Tree & Search & $O(\log{n})$ & $O(n)$ \\
+		& Insertion & $O(\log{n})$ & $O(n)$ \\
+		& Search & $O(\log{n})$ & $O(n)$ \\
+		\hline
 		KD Tree & Access & $O(\log{n})$ & $O(n)$ \\
-		KD Tree & Deletion & $O(\log{n})$ & $O(n)$ \\
-		KD Tree & Insertion & $O(\log{n})$ & $O(n)$ \\
-		KD Tree & Search & $O(\log{n})$ & $O(n)$ \\
+		& Deletion & $O(\log{n})$ & $O(n)$ \\
+		& Insertion & $O(\log{n})$ & $O(n)$ \\
+		& Search & $O(\log{n})$ & $O(n)$ \\
+		\hline
 		Red-Black Tree & Access & $O(\log{n})$ & $O(\log{n})$ \\
-		Red-Black Tree & Deletion & $O(\log{n})$ & $O(\log{n})$ \\
-		Red-Black Tree & Insertion & $O(\log{n})$ & $O(\log{n})$ \\
-		Red-Black Tree & Search & $O(\log{n})$ & $O(\log{n})$ \\
+		& Deletion & $O(\log{n})$ & $O(\log{n})$ \\
+		& Insertion & $O(\log{n})$ & $O(\log{n})$ \\
+		& Search & $O(\log{n})$ & $O(\log{n})$ \\
+		\hline
 		Splay Tree & Deletion & $O(\log{n})$ & $O(\log{n})$ \\
-		Splay Tree & Insertion & $O(\log{n})$ & $O(\log{n})$ \\
-		Splay Tree & Search & $O(\log{n})$ & $O(\log{n})$ \\
+		& Insertion & $O(\log{n})$ & $O(\log{n})$ \\
+		& Search & $O(\log{n})$ & $O(\log{n})$ \\
 		\hline
 	\end{tabular}
 \end{table}
 
 \newpage
 \section*{Heap - Common Operations}
+
+\begin{table}[ht]
+	\centering
+	\scriptsize
+	\begin{tabular}{c ccc}
+		\textbf{Data Structure} & \textbf{Operation} & \textbf{Complexity} \\
+		\hline
+		Binary Heap & Find Max & $O(1)$ \\
+		& Extract Max & $O(\log{n})$ \\
+		& Increase Key & $O(\log{n})$ \\
+		& Insert & $O(\log{n})$ \\
+		& Delete & $O(\log{n})$ \\
+		& Merge & $O(n+m)$ \\
+		\hline
+		Binomial Heap & Find Max & $O(1)$ \\
+		& Extract Max & $O(\log{n})$ \\
+		& Increase Key & $O(\log{n})$ \\
+		& Insert & $O(1)$ \\
+		& Delete & $O(\log{n})$ \\
+		& Merge & $O(\log{n})$ \\
+		\hline
+		Fibonacci Heap & Find Max & $O(1)$ \\
+		& Extract Max & $O(\log{n})$ \\
+		& Increase Key & $O(1)$ \\
+		& Insert & $O(1)$ \\
+		& Delete & $O(\log{n})$ \\
+		& Merge & $O(1)$ \\
+		\hline
+		Pairing Heap & Find Max & $O(1)$ \\
+		& Extract Max & $O(\log{n})$ \\
+		& Increase Key & $O(\log{n})$ \\
+		& Insert & $O(1)$ \\
+		& Delete & $O(\log{n})$ \\
+		& Merge & $O(1)$ \\
+		\hline
+	\end{tabular}
+\end{table}
 
 \addcontentsline{toc}{section}{Heap - Common Operations}
 
@@ -285,7 +357,7 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{cccc}
-		Name & Best& Average & Worst\\
+		\textbf{Name} & \textbf{Best}& \textbf{Average} & \textbf{Worst}\\
 		\hline
 		Block sort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
 		Bubble sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
@@ -334,6 +406,44 @@
 \subsection*{Data Structure Operations}
 \addcontentsline{toc}{section}{Graphs}
 \addcontentsline{toc}{subsection}{Data Structure Operationss}
+
+\begin{table}[ht]
+	\centering
+	\scriptsize
+	\begin{tabular}{cccc}
+		\textbf{Data Structure} & \textbf{Operation} & \textbf{Complexity} \\
+		\hline
+		Adjacency list & Storage &  $O(|V|+|E|)$  \\
+		& Add vertex & $O(1)$  \\
+		& Add edge & $O(1)$  \\
+		& Remove vertex & $O(|V|+|E|)$  \\
+		& Remove edge & $O(|E|)$  \\
+		& Query & $O(|V|)$  \\
+		\hline
+		Adjacency matrix & Storage & $O(|V|^2)$  \\
+		& Add vertex & $O(|V|^2)$  \\
+		& Add edge & $O(1)$  \\
+		& Remove vertex & $O(|V|^2)$  \\
+		& Remove edge & $O(1)$  \\
+		& Query & $O(1)$  \\
+		\hline
+		Incidence list & Storage &  $O(|V|+|E|)$  \\
+		& Add vertex & $O(1)$  \\
+		& Add edge & $O(1)$  \\
+		& Remove vertex & $O(|E|)$  \\
+		& Remove edge & $O(|E|)$  \\
+		& Query & $O(|E|)$  \\
+		\hline
+		Incidence matrix & Storage &  $O(|V|\times|E|)$  \\
+		& Add vertex & $O(|V|\times|E|)$  \\
+		& Add edge & $O(|V|\times|E|)$  \\
+		& Remove vertex & $O(|V|\times|E|)$  \\
+		& Remove edge & $O(|V|\times|E|)$  \\
+		& Query & $O(|E|)$  \\
+		\hline
+	\end{tabular}
+\end{table}
+
 
 \newpage
 \subsection*{Graph Search Algorithms}
