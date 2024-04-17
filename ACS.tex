@@ -216,8 +216,10 @@
 \addcontentsline{toc}{subsection}{Additional Operations}
 
 \newpage
-\section*{Common Operations on Basic Data Structures}
-\addcontentsline{toc}{section}{Common Operations on Basic Data Structures}
+\section*{Common Operations}
+\subsection*{Basic Data Structures}
+\addcontentsline{toc}{section}{Common Operations}
+\addcontentsline{toc}{subsection}{Basic Data Structures}
 
 \begin{table}[ht]
 	\centering
@@ -263,8 +265,8 @@
 \end{table}
 
 \newpage
-\section*{Common Operations on Trees Data Structures}
-\addcontentsline{toc}{section}{Common Operations on Trees Data Structures}
+\subsection*{Trees Data Structures}
+\addcontentsline{toc}{subsection}{Trees Data Structures}
 
 \begin{table}[ht]
 	\centering
@@ -309,7 +311,7 @@
 \end{table}
 
 \newpage
-\section*{Heap - Common Operations}
+\subsection*{Heap}
 
 \begin{table}[ht]
 	\centering
@@ -348,10 +350,11 @@
 	\end{tabular}
 \end{table}
 
-\addcontentsline{toc}{section}{Heap - Common Operations}
+\addcontentsline{toc}{subsection}{Heap}
 
 \newpage
 \section*{Sorting Algorithms}
+\subsection*{Comparison Sorting Algorithms}
 
 \begin{table}[ht]
 	\centering
@@ -369,7 +372,7 @@
 		Cycle sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$ \\
 		Exchange sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$ \\
 		Gnome sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$ \\
-		In-place merge sort & $O(n\log{n})$ & - & $O(n\log^2{n})$ \\
+		In-place merge sort & $ - $ & - & $O(n\log^2{n})$ \\
 		Insertion sort &$O(n)$ & $O(n^2)$ & $O(n^2)$ \\
 		Introsort & $O(n\log{n})$ & $O(n\log{n})$ & $O(n\log{n})$ \\
 		Heapsort & $O(n\log{n})$ & $O(n\log{n})$ & $O(n\log{n})$ \\
@@ -381,6 +384,7 @@
 		Radix sort\footnotemark[13] & $O(nd)$ & $O(nd)$ & $O(nd)$ \\
 		Selection sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$\\
 		Shellsort & $O(n \log{n})$& $O(n \log^2{n})$ & $O(n \log^2{n})$ \\
+		Simple pancake sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
 		Smoothsort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
 		Strand sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
 		Timsort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
@@ -392,10 +396,21 @@
 \end{table}
 
 \addcontentsline{toc}{section}{Sorting Algorithms}
+\addcontentsline{toc}{subsection}{Comparison Sorting Algorithms}
 \footnotetext[10]{\:k - number of buckets} 
 \footnotetext[11]{\:p - number of increments} 
 \footnotetext[12]{\:k - range of input} 
 \footnotetext[13]{\:d - max key lenght} 
+
+\newpage
+\subsection*{Non-comparison Sorting Algorithms}
+
+\addcontentsline{toc}{subsection}{Non-comparison Sorting Algorithms}
+
+\newpage
+\subsection*{Other Sorting Algorithms}
+
+\addcontentsline{toc}{subsection}{Other Sorting Algorithms}
 
 \newpage
 \section*{Searching}
@@ -452,14 +467,16 @@
 	\centering
 	\scriptsize
 	\begin{tabular}{c ccccc}
-		Operation & Algorithm & Input & Comment & Complexity \\
+		\textbf{Operation} & \textbf{Algorithm} & \textbf{Input} & \textbf{Comment} & \textbf{Complexity} \\
 		\hline
 		Explicit Graph Search & Depth First Search & V - vertices, E - edges &  & $O(|V| + |E|)$ \\
+		& Breadth First Search & V - vertices, E - edges & & $O(|V| + |E|)$ \\
+		\hline
 		Implicit Graph Search & Depth First Search & b - branching factor, d - depth & & $O(b^d)$ \\
-		Explicit Graph Search & Breadth First Search & V - vertices, E - edges & & $O(|V| + |E|)$ \\
-		Implicit Graph Search & Breadth First Search & b - branching factor, d - depth & & $O(b^d)$ \\
+		& Breadth First Search & b - branching factor, d - depth & & $O(b^d)$ \\
+		\hline
 		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Priority queue/heap & $O(|V| + |E|)log|V|$ \\
-		Shortest Path & Dijkstra's Algorithm & V - vertices, E - edges & Array & $O(|V|^2)$ \\
+		& Dijkstra's Algorithm & V - vertices, E - edges & Array & $O(|V|^2)$ \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -483,17 +500,20 @@
 % https://en.wikipedia.org/wiki/Time_complexity
 
 \newpage
-\subsection*{Bibliography}
+\addcontentsline{toc}{section}{References}
 
-\begin{thebibliography}{20}
-	\bibitem{texbook}
-	Cormen T. H., Leiserson C. E. - Introduction to Algorithms, fourth edition, MIT Press, 2022.
-	\bibitem{texbook}
-	Sedgewick R. - Algorithms, Addison Wesley Publishing Company, 1988.
-	\bibitem{texbook}
-	Sedgewick R., Wayne K. - Algorithms, Princeton University, 2011.
+\begin{thebibliography}{10}
+	\bibitem{texbook} Bradford P. G., Rawlins G. J. E., Shannon G. E. - Efficient matrix chain ordering in polylog time. SIAM Journal on Computing, 1998. 27 (2): 466–490. MR 1616556.
+	\bibitem{texbook} Brent R. P., Zimmermann P. - Modern Computer Arithmetic. Cambridge University Press, 2010, ISBN 978-0-521-19469-3.
+	\bibitem{texbook} Cormen T. H., Leiserson C. E. - Introduction to Algorithms, fourth edition, MIT Press, 2022.
+	\bibitem{texbook} Chudnovsky D., Chudnovsky G. - Approximations and complex multiplication according to Ramanujan. Ramanujan revisited: Proceedings of the Centenary Conference. Academic Press, 1988 pp. 375–472. ISBN 978-0-01-205856-5.
+	\bibitem{texbook} Knuth D. E. - Seminumerical Algorithms. The Art of Computer Programming Vol. 2 (3rd ed.), Addison-Wesley, 1997, ISBN 978-0-201-89684-8.
+	\bibitem{texbook} Kuperberg G. - A Subexponential-Time Quantum Algorithm for the Dihedral Hidden Subgroup Problem. SIAM Journal on Computing, 2005. Philadelphia. 35 (1): 188. arXiv:quant-ph/0302112. doi:10.1137.
+	\bibitem{texbook} Miltersen P.B.  - Derandomizing Complexity Classes. Handbook of Randomized Computing. Combinatorial Optimization. Kluwer Academic Pub., 2001,  9: 843. ISBN 978-1-4613-4886-3.
+	\bibitem{texbook} Schönhage A., Grotefeld A.F.W., Vetter E. - Fast Algorithms—A Multitape Turing Machine Implementation. BI Wissenschafts-Verlag, 1994. ISBN 978-3-411-16891-0.
+	\bibitem{texbook} Sedgewick R. - Algorithms, Addison Wesley Publishing Company, 1988.
+	\bibitem{texbook} Sedgewick R., Wayne K. - Algorithms, Princeton University, 2011.
+	\bibitem{texbook} Vassilevska W. V. - Breaking the Coppersmith-Winograd barrier: Multiplying matrices in $O(n^{2.373})$ time, 2014.
 \end{thebibliography}
-
-\addcontentsline{toc}{section}{Bibliography}
 
 \end{document}
