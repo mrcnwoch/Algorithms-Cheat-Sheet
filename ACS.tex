@@ -364,10 +364,8 @@
 		\hline
 		Block sort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
 		Bubble sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
-		Bucket sort\footnotemark[10] & $O(n+k)$ & $O(n+k)$ & $O(n^2)$ \\
 		Cocktail shaker sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
-		Comb sort\footnotemark[11] & $O(n\log{n})$ & $O(n^2/2^p)$ & $O(n^2)$ \\
-		Counting sort\footnotemark[12] & $O(n+k)$ & $O(n+k)$ & $O(n+k)$ \\
+		Comb sort\footnotemark[10] & $O(n\log{n})$ & $O(n^2/2^p)$ & $O(n^2)$ \\
 		Cubesort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
 		Cycle sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$ \\
 		Exchange sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$ \\
@@ -381,7 +379,6 @@
 		Odd-even sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
 		Patience sort & $O(n)$ & $O(n\log{n})$ & $O(n\log{n})$ \\
 		Quicksort & $O(n\log{n})$ & $O(n\log{n})$ & $O(n^2)$ \\
-		Radix sort\footnotemark[13] & $O(nd)$ & $O(nd)$ & $O(nd)$ \\
 		Selection sort & $O(n^2)$ & $O(n^2)$ & $O(n^2)$\\
 		Shellsort & $O(n \log{n})$& $O(n \log^2{n})$ & $O(n \log^2{n})$ \\
 		Simple pancake sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
@@ -397,15 +394,38 @@
 
 \addcontentsline{toc}{section}{Sorting Algorithms}
 \addcontentsline{toc}{subsection}{Comparison Sorting Algorithms}
-\footnotetext[10]{\:k - number of buckets} 
-\footnotetext[11]{\:p - number of increments} 
-\footnotetext[12]{\:k - range of input} 
-\footnotetext[13]{\:d - max key lenght} 
+\footnotetext[10]{\:p - number of increments} 
 
 \newpage
 \subsection*{Non-comparison Sorting Algorithms}
 
+\begin{table}[ht]
+	\centering
+	\scriptsize
+	\begin{tabular}{ccccc}
+		\textbf{Name} & \textbf{Best}& \textbf{Average} & \textbf{Worst} & \textbf{Comment}\\
+		\hline
+		Bucket sort (integer keys)\footnotemark[12] &  & $O(n)$ & $O(n + r)$ & \makecell{If $r$ is $O(n)$.\\Integers only.\\Uniform distribution of elements.}\\
+		Bucket sort (integer keys)\footnotemark[12] &  & $O(n+r)$ & $O(n + r)$ & \makecell{Integers only.\\Uniform distribution of elements.}\\
+		Bucket sort (uniform keys)\footnotemark[13] &  & $O(n+k)$ & $O(n^2 \times k)$ & \makecell{Integers only.\\Uniform distribution of elements.}\\
+		Burstsort\footnotemark[13] \footnotemark[14] &  & $O(\frac{nk}{d})$ & $O(\frac{nk}{d})$ & Can sort non-integers.\\
+		Counting sort\footnotemark[12] & & $O(n+r)$ & $O(n+r)$ & Integers only.\\
+		Counting sort\footnotemark[12] & & $O(n)$ & $O(n+r)$ & \makecell{If $r$ is $O(n)$.\\Integers only.}\\
+		Flashsort\footnotemark[12] &$O(n)$ & $O(n+r)$ & $O(n^2)$ & \makecell{Best time achieved for uniform distribution of elements.\\For skewed distributions it can be quadratic.}\\
+		In-place MSD Radix sort\footnotemark[13] \footnotemark[14] &  & $O(nk)$ & $O(nk)$ & Can sort non-integers.\\
+		LSD Radix sort\footnotemark[13] \footnotemark[14] & $O(n)$ & $O(\frac{nk}{d})$ & $O(\frac{nk}{d})$ & Can sort non-integers.\\
+		MSD Radix sort\footnotemark[13] \footnotemark[14] &  & $O(\frac{nk}{d})$ & $O(\frac{nk}{d})$ & Can sort non-integers.\\
+		Pigeonhole sort\footnotemark[13] &  & $O(n+2^k)$ & $O(n+2^k)$ & Integers only.\\
+		Postman sort\footnotemark[13] \footnotemark[14] &  & $O(\frac{nk}{d})$ & $O(\frac{nk}{d})$ & \\
+		Spreadsort\footnotemark[13] \footnotemark[14] & $O(n)$  & $O(\frac{nk}{d})$ & $O(n(\frac{k}{d} + d))$ & Can sort non-integers.\\
+		\hline
+	\end{tabular}
+\end{table}
+
 \addcontentsline{toc}{subsection}{Non-comparison Sorting Algorithms}
+\footnotetext[12]{\:r - range of numbers to be sorted} 
+\footnotetext[13]{\:k - key size} 
+\footnotetext[14]{\:d - digit size} 
 
 \newpage
 \subsection*{Other Sorting Algorithms}
