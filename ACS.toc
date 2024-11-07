@@ -1,22 +1,20 @@
-\contentsline {section}{Introduction}{3}{}%
-\contentsline {section}{Mathematical Operations}{4}{}%
-\contentsline {subsection}{Arithmetics}{4}{}%
-\contentsline {subsection}{Matrix Algebra}{5}{}%
-\contentsline {subsection}{Polynomials}{6}{}%
-\contentsline {subsection}{Number theory}{7}{}%
-\contentsline {subsection}{Additional Operations}{8}{}%
-\contentsline {section}{Common Operations}{9}{}%
-\contentsline {subsection}{Basic Data Structures}{9}{}%
-\contentsline {subsection}{Trees Data Structures}{10}{}%
-\contentsline {subsection}{Heap}{11}{}%
-\contentsline {section}{Sorting Algorithms}{12}{}%
-\contentsline {subsection}{Comparison Sorting Algorithms}{12}{}%
-\contentsline {subsection}{Non-comparison Sorting Algorithms}{13}{}%
-\contentsline {subsection}{Other Sorting Algorithms}{14}{}%
-\contentsline {section}{Searching}{15}{}%
-\contentsline {section}{Graphs}{16}{}%
-\contentsline {subsection}{Data Structure Operationss}{16}{}%
-\contentsline {subsection}{Graph Search Algorithms}{17}{}%
-\contentsline {subsection}{Other Graph Algorithms}{18}{}%
-\contentsline {section}{Operations on Strings}{19}{}%
-\contentsline {section}{References}{20}{}%
+\contentsline {section}{Mathematical Operations}{3}{}%
+\contentsline {subsection}{Arithmetics}{3}{}%
+\contentsline {subsection}{Matrix Algebra}{4}{}%
+\contentsline {subsection}{Polynomials}{5}{}%
+\contentsline {subsection}{Number theory}{6}{}%
+\contentsline {subsection}{Additional Operations}{7}{}%
+\contentsline {section}{Common Operations}{8}{}%
+\contentsline {subsection}{Basic Data Structures}{8}{}%
+\contentsline {subsection}{Trees Data Structures}{9}{}%
+\contentsline {subsection}{Heap}{10}{}%
+\contentsline {section}{Sorting Algorithms}{11}{}%
+\contentsline {subsection}{Comparison Sorting Algorithms}{11}{}%
+\contentsline {subsection}{Non-comparison Sorting Algorithms}{12}{}%
+\contentsline {subsection}{Other Sorting Algorithms}{13}{}%
+\contentsline {section}{Searching}{14}{}%
+\contentsline {section}{Graphs}{15}{}%
+\contentsline {subsection}{Data Structure Operationss}{15}{}%
+\contentsline {subsection}{Graph Search Algorithms}{16}{}%
+\contentsline {subsection}{Other Graph Algorithms}{17}{}%
+\contentsline {nie section}{References}{18}{}%
