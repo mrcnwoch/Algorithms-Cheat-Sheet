@@ -17,4 +17,5 @@
 \contentsline {subsection}{Data Structure Operationss}{15}{}%
 \contentsline {subsection}{Graph Search Algorithms}{16}{}%
 \contentsline {subsection}{Other Graph Algorithms}{17}{}%
-\contentsline {nie section}{References}{18}{}%
+\contentsline {section}{Linear Programming}{18}{}%
+\contentsline {section}{References}{19}{}%
